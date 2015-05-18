@@ -34,10 +34,7 @@ public class CharacterSelect
             AdapterView.OnItemClickListener,
             AdapterView.OnItemLongClickListener {
 
-    // Do I need to store the list?
-    private ListView characterList;
-
-
+    // Message for the intent when starting the CharacterInfo activity.
     public final static String EXTRA_MESSAGE = "cs.pathfinder.tabletop.game.tyler.pathfindercs.CHARACTER";
 
     // #################  Overridden Methods  #################
@@ -101,13 +98,6 @@ public class CharacterSelect
 
     @Override
     public void onCreateCharacter(CharacterInfo characterInfo) {
-        if (CharacterHelper.isEmpty()) {
-            System.out.println("############## loadListView() run: true");
-            loadListView();
-        } else {
-            System.out.println("############## loadListView() run: false");
-        }
-
         createNewCharacter(characterInfo);
         int loc = CharacterHelper.getCharacterCount() - 1;
 
@@ -144,6 +134,8 @@ public class CharacterSelect
         Toast.makeText(this, name + " has sucessfully been removed.", Toast.LENGTH_SHORT).show();
     }
 
+    // Custom Methods...
+
     public void loadEmptyView() {
         TextView textView = (TextView) findViewById(R.id.emptyTextView);
         textView.setVisibility(View.VISIBLE);
@@ -155,7 +147,7 @@ public class CharacterSelect
         TextView emptyView = (TextView) findViewById(R.id.emptyTextView);
         emptyView.setVisibility(View.GONE);
 
-        characterList = (ListView) findViewById(R.id.character_select_list);
+        ListView characterList = listView();
         characterList.setVisibility(View.VISIBLE);
         characterList.setOnItemClickListener(this);
         characterList.setOnItemLongClickListener(this);
@@ -176,6 +168,10 @@ public class CharacterSelect
 
     private void updateListView() {
         ArrayAdapter<String> array = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, CharacterHelper.getStringArray());
-        characterList.setAdapter(array);
+        listView().setAdapter(array);
+    }
+
+    private ListView listView() {
+        return (ListView) findViewById(R.id.character_select_list);
     }
 }

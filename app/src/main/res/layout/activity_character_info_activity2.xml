@@ -250,18 +250,15 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                android:padding="5dp">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:onClick="onClick"
+                                android:id="@+id/tab_stats_hp_click">
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="Hit Points:"
                                     android:id="@+id/tab_stats_hp_title"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="0/0"
-                                    android:id="@+id/tab_stats_hp_value"
-                                    android:layout_gravity="end"/>
+                                    android:id="@+id/tab_stats_hp_value"/>
                             </LinearLayout>
                             <ImageView
                                 android:layout_width="fill_parent"
@@ -276,14 +273,10 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="Initiative:"
                                     android:id="@+id/tab_stats_init_title"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="+0"/>
                             </LinearLayout>
                             <ImageView
@@ -299,23 +292,17 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="Saves"
                                     android:id="@+id/tab_stats_save_title"/>
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="Fortitude"
                                         android:id="@+id/tab_stats_fort_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_fort_value"/>
                                 </LinearLayout>
@@ -323,14 +310,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="Reflex"
                                         android:id="@+id/tab_stats_reflex_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_reflex_value"/>
                                 </LinearLayout>
@@ -338,14 +321,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="Will"
                                         android:id="@+id/tab_stats_will_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_will_value"/>
                                 </LinearLayout>
@@ -367,14 +346,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="BAB"
                                         android:id="@+id/tab_stats_bab_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_bab_value"/>
                                 </LinearLayout>
@@ -382,14 +357,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="CMD"
                                         android:id="@+id/tab_stats_cmd_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_cmd_value"/>
                                 </LinearLayout>
@@ -397,14 +368,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="CMB"
                                         android:id="@+id/tab_stats_cmb_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_cmb_value"/>
                                 </LinearLayout>
@@ -426,14 +393,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="Flat-Footed"
                                         android:id="@+id/tab_stats_flat_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_flat_value"/>
                                 </LinearLayout>
@@ -441,14 +404,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="Touch"
                                         android:id="@+id/tab_stats_touch_title"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                    <TextView style="@style/CharacterInfoListText"
                                         android:text="0"
                                         android:id="@+id/tab_stats_touch_value"/>
                                 </LinearLayout>
@@ -466,9 +425,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="Skills..."
                                     android:id="@+id/tab_stats_skills_title"/>
                             </LinearLayout>
@@ -485,9 +442,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="Feats..."
                                     android:id="@+id/tab_stats_feats_title"/>
                             </LinearLayout>
@@ -504,9 +459,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <TextView style="@style/CharacterInfoListText"
                                     android:text="Special Abilities..."
                                     android:id="@+id/tab_stats_special_title"/>
                             </LinearLayout>

@@ -12,50 +12,32 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.CharacterHelper;
+import cs.pathfinder.tabletop.game.tyler.pathfindercs.dialogs.BasicEditDialog;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.CharacterInfo;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.R;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.expandable_list_view_stuff.CharacterArrayAdapter;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.expandable_list_view_stuff.CharacterListView;
 
 
-public class CharacterInfoActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class CharacterInfoActivity
+        extends ActionBarActivity
+        implements AdapterView.OnItemClickListener,
+            BasicEditDialog.Communicator {
 
-    TextView name;
-    CharacterInfo characterInfo;
-    int selectedCharacter;
+    private CharacterInfo characterInfo;
+    private int selectedCharacter;
+    private String clickedView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_info_activity2);
-        name = (TextView) findViewById(R.id.name_info_text);
 
         Intent intent = getIntent();
         int message = intent.getIntExtra(CharacterSelect.EXTRA_MESSAGE, 0);
         characterInfo = CharacterHelper.getCharacter(message);
         selectedCharacter = message;
-
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
-        tabHost.setup();
-        TabHost.TabSpec tabSpec = tabHost.newTabSpec("details_tab");
-        tabSpec.setContent(R.id.tab_details);
-        tabSpec.setIndicator("Details");
-        tabHost.addTab(tabSpec);
-
-        tabSpec = tabHost.newTabSpec("stats_tab");
-        tabSpec.setContent(R.id.tab_stats);
-        tabSpec.setIndicator("Stats");
-        tabHost.addTab(tabSpec);
-
-        tabSpec = tabHost.newTabSpec("items_tab");
-        tabSpec.setContent(R.id.tab_items);
-        tabSpec.setIndicator("Items");
-        tabHost.addTab(tabSpec);
-
-        tabSpec = tabHost.newTabSpec("spells_tab");
-        tabSpec.setContent(R.id.tab_spells);
-        tabSpec.setIndicator("Spells");
-        tabHost.addTab(tabSpec);
+        setupTabs();
 
         ListView detailsList = (ListView) findViewById(R.id.tab_details_list);
         detailsList.setOnItemClickListener(this);
@@ -65,7 +47,6 @@ public class CharacterInfoActivity extends ActionBarActivity implements AdapterV
         array.setListType(CharacterListView.ListType.DETAILS);
         detailsList.setAdapter(array);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,5 +73,46 @@ public class CharacterInfoActivity extends ActionBarActivity implements AdapterV
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+    }
+
+    @Override
+    public void onSave(String value) {
+        if (clickedView.equals("hp")) {
+            TextView view = (TextView) findViewById(R.id.tab_stats_hp_value);
+            view.setText(value);
+        }
+    }
+
+    public void setupTabs() {
+        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+        tabHost.setup();
+        TabHost.TabSpec tabSpec = tabHost.newTabSpec("details_tab");
+        tabSpec.setContent(R.id.tab_details);
+        tabSpec.setIndicator("Details");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("stats_tab");
+        tabSpec.setContent(R.id.tab_stats);
+        tabSpec.setIndicator("Stats");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("items_tab");
+        tabSpec.setContent(R.id.tab_items);
+        tabSpec.setIndicator("Items");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("spells_tab");
+        tabSpec.setContent(R.id.tab_spells);
+        tabSpec.setIndicator("Spells");
+        tabHost.addTab(tabSpec);
+    }
+
+    public void onClick(View view) {
+        if (view.getId() == R.id.tab_stats_hp_click) {
+            clickedView = "hp";
+            BasicEditDialog dialog = new BasicEditDialog();
+            dialog.setTitleAndValue("Health Points", "0");
+            dialog.show(getSupportFragmentManager(), "edit dialog");
+        }
     }
 }
