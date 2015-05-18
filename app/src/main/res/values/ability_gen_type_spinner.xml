@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ability_gen">
+        <item>Manual</item>
+        <item>Standard (4d6 -lowest)</item>
+        <item>Classic (3d6)*</item>
+        <item>Heroic (2d6 +6)*</item>
+        <item>Dice Pool (24d6)*</item>
+        <item>Purchase (Set points)*</item>
+    </string-array>
+</resources>

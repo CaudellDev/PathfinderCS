@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cs.pathfinder.tabletop.game.tyler.pathfindercs" >
+
+    <application
+        android:name=".CharacterHelper"
+        android:allowBackup="true"
+        android:icon="@drawable/pathfinder_icon_92x92"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activities.CharacterSelect"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.CharacterInfoActivity"
+            android:label="@string/title_activity_character_info_activity2"
+            android:parentActivityName=".activities.CharacterSelect" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.pathfinder.tabletop.game.tyler.pathfindercs.activities.CharacterSelect" />
+        </activity>
+        <activity
+            android:name=".activities.ActivityRaces"
+            android:label="@string/title_activity_activity_races"
+            android:parentActivityName=".activities.CharacterSelect" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.pathfinder.tabletop.game.tyler.pathfindercs.activities.CharacterSelect" />
+        </activity>
+        <activity
+            android:name=".activities.ActivityClases"
+            android:label="@string/title_activity_activity_clases"
+            android:parentActivityName=".activities.CharacterSelect" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.pathfinder.tabletop.game.tyler.pathfindercs.activities.CharacterSelect" />
+        </activity>
+        <activity
+            android:name=".activities.Settings"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".activities.CharacterSelect" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.pathfinder.tabletop.game.tyler.pathfindercs.activities.CharacterSelect" />
+        </activity>
+        <activity
+            android:name=".activities.About"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".activities.CharacterSelect" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.pathfinder.tabletop.game.tyler.pathfindercs.activities.CharacterSelect" />
+        </activity>
+    </application>
+
+</manifest>

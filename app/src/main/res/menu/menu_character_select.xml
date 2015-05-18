@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".CharacterSelect">
+
+    <item android:id="@+id/create_new_character" android:title="Add"
+        android:orderInCategory="1" android:icon="@drawable/ic_add_white_48dp"
+         app:showAsAction="ifRoom" />
+
+    <item android:title="Edit Races" app:showAsAction="never"
+        android:orderInCategory="2" android:id="@+id/menu_select_races"/>
+
+    <item android:title="Edit Classes" app:showAsAction="never"
+        android:orderInCategory="3" android:id="@+id/menu_select_classes"/>
+
+    <item android:title="About" app:showAsAction="never"
+        android:orderInCategory="4" android:id="@+id/menu_select_about"/>
+
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>

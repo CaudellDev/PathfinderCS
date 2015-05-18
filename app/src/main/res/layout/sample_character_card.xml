@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Helm"
+            android:background="#ff434343"
+            android:textColor="#ffffffff"
+            android:textAlignment="center"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:background="#ff4b4b4b" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Level 1 Fighter Elf"
+            android:id="@+id/textView"
+            android:textColor="#ffffffff"
+            android:textSize="26sp"
+            android:background="#ff444444" />
+    </LinearLayout>
+</FrameLayout>

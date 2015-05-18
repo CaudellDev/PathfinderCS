@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".CreateRaceActivity">
+    <item android:id="@+id/create_race_next" android:title="Next"
+        android:orderInCategory="1" app:showAsAction="always" />
+
+</menu>

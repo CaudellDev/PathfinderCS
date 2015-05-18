@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="races">
+        <item>----</item>
+        <item>Elf</item>
+        <item>Orc</item>
+        <item>Human</item>
+        <item>Half-Elf</item>
+        <item>Druid</item>
+        <item>Dwarf</item>
+    </string-array>
+</resources>

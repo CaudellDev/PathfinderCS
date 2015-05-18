@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <race name="">
+        <abilities
+            str="0" dex="0" con="0"
+            int="0" wis="0" cha="0"/>
+        <size></size>
+        <speed></speed>
+        <vision></vision>
+        <weapon-proficiency></weapon-proficiency>
+        <languages></languages>
+        <racial-bonuses></racial-bonuses>
+        <misc-bonuses></misc-bonuses>
+    </race>
+</resources>
