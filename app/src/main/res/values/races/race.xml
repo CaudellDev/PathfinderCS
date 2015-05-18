@@ -1,0 +1,32 @@
+<resource>
+  <string name="race">default</string>
+  
+  <integer-array name="abilities">
+    <item>0</item> <item>0</item>
+    <item>0</item> <item>0</item>
+    <item>0</item> <item>0</item>
+  </integer-array>
+  
+  <string name="size">Name:Penalty</string>
+  <string name="vision">Name:Value</string>
+  <integer name="base_speed">Value:Unit</integer>
+  
+  <string-array name="language">
+    <item>Name:Other?</item>
+  </string-array>
+  
+  <string-array name="feat">
+    <item>Feat-Name:Level:Other</item>
+  </string-array>
+  
+  <string-array name="bonus">
+    <item>Bonus-Name:Bonus-Skill:Bonus-Value:Other</item>
+  </string-array>
+  
+  <string-array name="weapons">
+    <item>Weapon-Name</item>
+  </string-array>
+  
+  <string-array name="other">?</string-array>
+  
+</resource>

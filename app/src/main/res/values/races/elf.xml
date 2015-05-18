@@ -1,0 +1,50 @@
+<resource>
+  <string name="race">Elf</string>
+  
+  <integer-array name="abilities">
+    <item>0</item> <item>+2</item>
+    <item>-2</item> <item>+2</item>
+    <item>0</item> <item>0</item>
+  </integer-array>
+  
+  <string name="size">med:none</string>
+  <string name="vision">low-light:60</string>
+  <integer name="base_speed">30:feet</integer>
+  
+  <string-array name="language">
+    <item>common:norm</item>
+    <item>elven:norm</item>
+    <item>celectial:high</item>
+    <item>draconic:high</item>
+    <item>gnoll:high</item>
+    <item>gnome:high</item>
+    <item>goblin:high</item>
+    <item>orc:high</item>
+    <item>sylvan:high</item>
+  </string-array>
+  
+  <string-array name="feat">
+    <item>none:0:none</item>
+  </string-array>
+  
+  <string-array name="bonus">
+    <item>Keen Sences:perception:+2:always</item>
+    <item>Elven Immunities:immune:immune:[magic:sleep_effects]</item>
+    <item>Elven Immunities:saving_throw:+2:[enchantment:[spell:effect]]</item>
+    <item>Elven Magic:caster_level_check:+2:[overcome:spell_resistance]</item>
+    <item>Elven Magic:spellcraft:+2:[identify:[property:magic_item]]</item>
+  </string-array>
+  
+  <string-array name="weapons">
+    <item>Longbow:[normal|composite]</item>
+    <item>Shortbow:[normal|composite]</item>
+    <item>Longsword:normal</item>
+    <item>Rapier:normal</item>
+    <item>"Elven":martial_weapon</item>
+  </string-array>
+  
+  <string-array name="other">
+    <item>none</item>
+  </string-array>
+  
+</resource>

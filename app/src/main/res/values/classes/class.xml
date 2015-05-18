@@ -1,0 +1,19 @@
+<resource>
+  <string name="class">default</string>
+  <string name="allignment">nn</string>
+  <string name="hit_die">0</string>
+  
+  <integer name="ranks_per_level">0</integer>
+  <string-array name="skills">
+    <item>Skill-Name</item>
+  </string-array>
+  
+  <string-array name="leveling_list">
+    <item>BAB:Fort:Reflex:Will:Other</item>
+  </string-array>
+  
+  <string-array name="spells">
+    <item>0th:1st:2nd:3rd:4th:5th:6th</item>
+  </string-array>
+  
+</resource>

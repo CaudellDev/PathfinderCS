@@ -1,0 +1,58 @@
+<resource>
+  <string name="class1">Rogue</string>
+  <string name="allignment">any</string>
+  <string name="hit_die">d8</string>
+  
+  <integer name="ranks_per_level">8</integer>
+  <string-array name="skills">
+    <item>acrobatics</item>
+    <item>appraise</item>
+    <item>bluff</item>
+    <item>climb</item>
+    <item>craft</item>
+    <item>diplomacy</item>
+    <item>disable_device</item>
+    <item>disguise</item>
+    <item>escape_artist</item>
+    <item>intimidate</item>
+    <item>knowledge_dungeoneering</item>
+    <item>knowledge_local</item>
+    <item>linguistics</item>
+    <item>perception</item>
+    <item>perform</item>
+    <item>profession</item>
+    <item>sense_motive</item>
+    <item>sleight_of_hand</item>
+    <item>stealth</item>
+    <item>swim</item>
+    <item>use_magic_device</item>
+  </string-array>
+  
+  <string-array name="leveling_list">
+    <item>+0:+0:+2:+0:[stuff]</item>
+    <item>+1:+0:+2:+0:[stuff]</item>
+    <item>+2:+0:+2:+0:[stuff]</item>
+    <item>+3:+0:+2:+0:[stuff]</item>
+    <item>+3:+0:+2:+0:[stuff]</item>
+    <item>+4:+0:+2:+0:[stuff]</item>
+    <item>+5:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+7|+2]:+0:+2:+0:[stuff]</item>
+    <item>[+8|+3]:+0:+2:+0:[stuff]</item>
+    <item>[+9|+4]:+0:+2:+0:[stuff]</item>
+    <item>[+9|+4]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+    <item>[+6|+1]:+0:+2:+0:[stuff]</item>
+  </string-array>
+  
+  <string-array name="spells">
+    <item>none</item>
+  </string-array>
+  
+</resource>
