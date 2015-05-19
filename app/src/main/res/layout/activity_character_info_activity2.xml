@@ -17,7 +17,7 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TabWidget>
+                android:layout_height="wrap_content"/>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -30,18 +30,151 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/name_info_text"
-                        android:visibility="gone" />
-
                     <view
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         class="cs.pathfinder.tabletop.game.tyler.pathfindercs.expandable_list_view_stuff.CharacterListView"
-                        android:id="@+id/tab_details_list" />
+                        android:id="@+id/tab_details_list"
+                        android:visibility="gone"/>
 
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_name_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Name:"
+                                    android:id="@+id/tab_details_name_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text=""
+                                    android:id="@+id/tab_details_name_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_race_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Race:"
+                                    android:id="@+id/tab_details_race_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text=""
+                                    android:id="@+id/tab_details_race_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_class_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Class:"
+                                    android:id="@+id/tab_details_class_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text=""
+                                    android:id="@+id/tab_details_class_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:id="@+id/tab_details_level_click"
+                                    android:orientation="vertical">
+                                    <TextView style="@style/CharacterInfoListText"
+                                        android:text="Level"
+                                        android:id="@+id/tab_details_level_title"/>
+                                    <TextView style="@style/CharacterInfoListText"
+                                        android:text="1"
+                                        android:id="@+id/tab_details_level_value"/>
+                                </LinearLayout>
+                                <View style="@style/Spacer"/>
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:id="@+id/tab_details_xp_click"
+                                    android:orientation="vertical">
+                                    <TextView style="@style/CharacterInfoListText"
+                                        android:text="XP"
+                                        android:id="@+id/tab_details_xp_title"/>
+                                    <TextView style="@style/CharacterInfoListText"
+                                        android:text="0"
+                                        android:id="@+id/tab_details_xp_value"/>
+                                </LinearLayout>
+                                <View style="@style/Spacer"/>
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:id="@+id/tab_details_nlevel_click"
+                                    android:orientation="vertical">
+                                    <TextView style="@style/CharacterInfoListText"
+                                        android:text="Level Up"
+                                        android:id="@+id/tab_details_nlevel_title"/>
+                                    <TextView style="@style/CharacterInfoListText"
+                                        android:text="2000"
+                                        android:id="@+id/tab_details_nlevel_value"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_gender_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Gender:"
+                                    android:id="@+id/tab_details_gender_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text=""
+                                    android:id="@+id/tab_details_gender_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_age_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Age:"
+                                    android:id="@+id/tab_details_age_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="0"
+                                    android:id="@+id/tab_details_age_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_alli_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Alliance:"
+                                    android:id="@+id/tab_details_alli_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="NN"
+                                    android:id="@+id/tab_details_alli_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_height_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Height:"
+                                    android:id="@+id/tab_details_height_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="0"
+                                    android:id="@+id/tab_details_height_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_weight_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Weight:"
+                                    android:id="@+id/tab_details_weight_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="0"
+                                    android:id="@+id/tab_details_weight_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_details_size_click">
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Size:"
+                                    android:id="@+id/tab_details_size_title"/>
+                                <TextView style="@style/CharacterInfoListText"
+                                    android:text="Normal"
+                                    android:id="@+id/tab_details_size_value"/>
+                            </LinearLayout>
+                            <ImageView style="@style/ImageSeparator"/>
+                        </LinearLayout>
+                    </ScrollView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -54,16 +187,8 @@
                         android:layout_height="fill_parent">
                         <LinearLayout
                             android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
+                            android:layout_height="match_parent"
                             android:orientation="vertical">
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
                             <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
@@ -238,20 +363,8 @@
                                         android:id="@+id/textView20" />
                                 </LinearLayout>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="5dp"
-                                android:onClick="onClick"
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
                                 android:id="@+id/tab_stats_hp_click">
                                 <TextView style="@style/CharacterInfoListText"
                                     android:text="Hit Points:"
@@ -260,45 +373,26 @@
                                     android:text="0/0"
                                     android:id="@+id/tab_stats_hp_value"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
                                 android:orientation="horizontal"
-                                android:padding="5dp">
+                                android:id="@+id/tab_stats_init_click">
                                 <TextView style="@style/CharacterInfoListText"
                                     android:text="Initiative:"
                                     android:id="@+id/tab_stats_init_title"/>
                                 <TextView style="@style/CharacterInfoListText"
+                                    android:id="@+id/tab_stats_init_value"
                                     android:text="+0"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
+                            <ImageView style="@style/ImageSeparator"/>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <TextView style="@style/CharacterInfoListText"
-                                    android:text="Saves"
-                                    android:id="@+id/tab_stats_save_title"/>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_fort_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="Fortitude"
                                         android:id="@+id/tab_stats_fort_title"/>
@@ -306,10 +400,10 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_fort_value"/>
                                 </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <View style="@style/Spacer"/>
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_reflex_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="Reflex"
                                         android:id="@+id/tab_stats_reflex_title"/>
@@ -317,10 +411,10 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_reflex_value"/>
                                 </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <View style="@style/Spacer"/>
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_will_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="Will"
                                         android:id="@+id/tab_stats_will_title"/>
@@ -328,24 +422,17 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_will_value"/>
                                 </LinearLayout>
+                                <View style="@style/Spacer"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
+                            <ImageView style="@style/ImageSeparator"/>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_bab_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="BAB"
                                         android:id="@+id/tab_stats_bab_title"/>
@@ -353,10 +440,10 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_bab_value"/>
                                 </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <View style="@style/Spacer"/>
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_cmd_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="CMD"
                                         android:id="@+id/tab_stats_cmd_title"/>
@@ -364,10 +451,10 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_cmd_value"/>
                                 </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <View style="@style/Spacer"/>
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_cmb_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="CMB"
                                         android:id="@+id/tab_stats_cmb_title"/>
@@ -375,24 +462,17 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_cmb_value"/>
                                 </LinearLayout>
+                                <View style="@style/Spacer"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
+                            <ImageView style="@style/ImageSeparator"/>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:padding="5dp">
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_flat_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="Flat-Footed"
                                         android:id="@+id/tab_stats_flat_title"/>
@@ -400,10 +480,10 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_flat_value"/>
                                 </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                <View style="@style/Spacer"/>
+                                <LinearLayout style="@style/CharacterInfoClick"
+                                    android:orientation="vertical"
+                                    android:id="@+id/tab_stats_touch_click">
                                     <TextView style="@style/CharacterInfoListText"
                                         android:text="Touch"
                                         android:id="@+id/tab_stats_touch_title"/>
@@ -411,66 +491,30 @@
                                         android:text="0"
                                         android:id="@+id/tab_stats_touch_value"/>
                                 </LinearLayout>
+                                <View style="@style/Spacer"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="5dp">
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_stats_skills_click">
                                 <TextView style="@style/CharacterInfoListText"
                                     android:text="Skills..."
                                     android:id="@+id/tab_stats_skills_title"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="5dp">
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_stats_feats_click">
                                 <TextView style="@style/CharacterInfoListText"
                                     android:text="Feats..."
                                     android:id="@+id/tab_stats_feats_title"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="5dp">
+                            <ImageView style="@style/ImageSeparator"/>
+                            <LinearLayout style="@style/CharacterInfoClick"
+                                android:id="@+id/tab_stats_special_click">
                                 <TextView style="@style/CharacterInfoListText"
                                     android:text="Special Abilities..."
                                     android:id="@+id/tab_stats_special_title"/>
                             </LinearLayout>
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@android:drawable/divider_horizontal_bright"
-                                android:scaleType="fitXY"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="2dp"/>
+                            <ImageView style="@style/ImageSeparator"/>
                         </LinearLayout>
                     </ScrollView>
 
@@ -481,13 +525,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Tab 3 loaded"
-                        android:id="@+id/textView3" />
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                        </LinearLayout>
+                    </ScrollView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -495,7 +541,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/tab_spells">
-
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                        </LinearLayout>
+                    </ScrollView>
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

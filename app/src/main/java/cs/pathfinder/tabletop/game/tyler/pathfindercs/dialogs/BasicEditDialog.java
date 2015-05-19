@@ -27,6 +27,7 @@ public class BasicEditDialog extends DialogFragment {
                 .setView(valueEdit)
                 .setPositiveButton("Save", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        System.out.println("########## dialog valueEdit text: " + valueEdit.getText().toString());
                         communicator.onSave(valueEdit.getText().toString());
                     }
                 })
