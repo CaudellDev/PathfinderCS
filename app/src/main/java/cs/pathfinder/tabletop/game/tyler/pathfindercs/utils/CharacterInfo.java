@@ -109,6 +109,7 @@ public class CharacterInfo {
                 break;
             case GENDER:
                 gender = value;
+                break;
             case AGE:
                 maxHP = Integer.valueOf(value);
                 break;
