@@ -9,13 +9,13 @@ import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.Dice;
 
 public class CharacterInfo {
 
-    private int id;
-
     private String name;
     private String user;
     // Fluff
     private String race;
     private String cClass;
+    private boolean autoImportRace;  // If true, automatically adds data from
+    private boolean autoImportClass; // custom or preset race and class data.
     private String alliance;
     private int age;
     private int height;
@@ -70,30 +70,28 @@ public class CharacterInfo {
 
     private Map<Stats, Integer> miscMods;
 
-    public final static String[] detailTitles =
-            {"Name", "Race", "Class", "Level",
-             "Experience", "Gender", "Age",
-             "Alliance", "Height", "Weight", "Size"};
+    public final static String empty = "Empty";
 
     public CharacterInfo() {
         init();
     }
 
-    public CharacterInfo(String name) {
-        init();
-        this.name = name;
-    }
-
     private void init() {
-        name = "";
+        name = empty;
         currLevel = 1;
-        race = "";
-        cClass = "";
-        gender = "";
-        alliance = "";
+        race = empty;
+        cClass = empty;
+        gender = empty;
+        alliance = empty;
 
         miscMods = new HashMap<Stats, Integer>();
     }
+
+    public void setAutoImportRace(boolean autoImport) { this.autoImportRace = autoImport; }
+    public boolean autoImportRace() { return autoImportRace; }
+
+    public void setAutoImportClass(boolean autoImport) { this.autoImportClass = autoImport; }
+    public boolean autoImportClass() { return autoImportClass; }
 
     public void set(Stats stat, String value) {
         switch (stat) {
@@ -111,16 +109,16 @@ public class CharacterInfo {
                 gender = value;
                 break;
             case AGE:
-                maxHP = Integer.valueOf(value);
+                age = Integer.valueOf(value);
                 break;
             case ALLI:
                 alliance = value;
                 break;
             case HEIGHT:
-                maxHP = Integer.valueOf(value);
+                height = Integer.valueOf(value);
                 break;
             case WEIGHT:
-                maxHP = Integer.valueOf(value);
+                weight = Integer.valueOf(value);
                 break;
             case MAX_HP:
                 maxHP = Integer.valueOf(value);
@@ -136,6 +134,15 @@ public class CharacterInfo {
                 break;
             case NEXT_LVL:
                 nextLevel = Integer.valueOf(value);
+                break;
+            case BAB:
+                BAB = Integer.valueOf(value);
+                break;
+            case CMD:
+                CMD = Integer.valueOf(value);
+                break;
+            case CMB:
+                CMB = Integer.valueOf(value);
                 break;
             case FORT:
                 fortitude = Integer.valueOf(value);
@@ -218,6 +225,12 @@ public class CharacterInfo {
                 return currLevel + "";
             case NEXT_LVL:
                 return nextLevel + "";
+            case BAB:
+                return BAB + "";
+            case CMD:
+                return CMD + "";
+            case CMB:
+                return CMB + "";
             case FORT:
                 return fortitude + "";
             case REFLEX:
@@ -253,58 +266,6 @@ public class CharacterInfo {
         }
         return "";
     }
-
-    public void setId(int id) { this.id = id; }
-    public void setName(String name) { this.name = name; }
-    public void setRace(String race) { this.race = race; }
-    public void setClass(String cClass) { this.cClass = cClass; }
-    public void setGender(String gender) { this.gender = gender; }
-    public void setExperience(int experience) { this.experience = experience; }
-    public void addExperience(int gained) { experience += gained; }
-
-    public int getId() { return id; }
-    public String getName() { return name; }
-
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getAlliance() {
-        return alliance;
-    }
-    public void setAlliance(String alliance) {
-        this.alliance = alliance;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public String getSize() {
-        return size;
-    }
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public String getRace() { return race; }
-    public String getcClass() { return cClass; }
-    public String getGender() { return gender; }
-    public int getCurrLevel() { return currLevel; }
-    public int getExperience() { return experience; }
 
     public int[] getAbilities() {
         return new int[]{strength, dexterity, constitution,
@@ -352,37 +313,9 @@ public class CharacterInfo {
         }
     }
 
-    public String[] getDetailsArray(boolean title) {
-        ArrayList<String> result = new ArrayList<String>();
-        if (title) {
-            result.add("Name: " + name);
-            result.add("Race: " + race);
-            result.add("Class: " + cClass);
-            result.add("Level: " + currLevel);
-            result.add("Experience: " + experience);
-            result.add("Gender: " + gender);
-            result.add("Age: " + age);
-            result.add("Alliance: " + alliance);
-            result.add("Height: " + height);
-            result.add("Weight: " + weight);
-            result.add("Size: " + size);
-        } else {
-            result.add(name);
-            result.add(race);
-            result.add(cClass);
-            result.add("" + currLevel);
-            result.add("" + experience);
-            result.add(gender);
-            result.add("" + age);
-            result.add(alliance);
-            result.add("" + height);
-            result.add("" + weight);
-            result.add(size);
-        }
-        return result.toArray(new String[result.size()]);
-    }
-
+    // For debugging purposes now...
     public String toString() {
-        return name + " - Level " + currLevel + " " + cClass + " " + race;
+        return name + " - Level " + currLevel + " " + cClass + " " + race
+                + " {" + super.toString() + "}";
     }
 }
