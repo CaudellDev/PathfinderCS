@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.CharacterHelper;
@@ -21,6 +22,7 @@ import cs.pathfinder.tabletop.game.tyler.pathfindercs.R;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.components.CharacterCard;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.dialogs.ConfirmDeleteDialog;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.dialogs.CreateCharacterDialog;
+import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.XML_Helper;
 
 /**
  * The main/launch activity. This is where
@@ -36,6 +38,7 @@ public class CharacterSelect
 
     // Message for the intent when starting the CharacterInfo activity.
     public final static String EXTRA_MESSAGE = "cs.pathfinder.tabletop.game.tyler.pathfindercs.CHARACTER";
+    private XML_Helper xml_helper;
 
     // #################  Overridden Methods  #################
 
@@ -43,7 +46,11 @@ public class CharacterSelect
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_select);
-        loadEmptyView();
+        if (CharacterHelper.isEmpty()) {
+            loadEmptyView();
+        } else {
+            loadListView();
+        }
     }
 
     @Override

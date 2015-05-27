@@ -1,10 +1,14 @@
 package cs.pathfinder.tabletop.game.tyler.pathfindercs;
 
 import android.app.Application;
+import android.content.Context;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.CharacterInfo;
+import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.Stats;
+import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.XML_Helper;
 
 /**
  * Created by Tyler on 4/22/2015.
@@ -21,9 +25,13 @@ import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.CharacterInfo;
 public class CharacterHelper extends Application {
 
     private static LinkedList<CharacterInfo> characters;
+    private static XML_Helper xml_helper;
+    private static Context context;
 
     public static void addCharacter(CharacterInfo newCharacter) {
         characters.add(newCharacter);
+        xml_helper.saveCharacter(newCharacter, characters.indexOf(newCharacter), context);
+        System.out.println("#################   addCharacter: " + newCharacter + " index: " + characters.indexOf(newCharacter));
     }
 
     public static CharacterInfo getCharacter(int loc) {
@@ -58,8 +66,51 @@ public class CharacterHelper extends Application {
     @Override
     public void onCreate() {
         if (characters == null) {
-            characters = new LinkedList<CharacterInfo>();
+            xml_helper = XML_Helper.getInstance();
+            context = getApplicationContext();
+            characters = getSavedCharacters();
         }
         super.onCreate();
+    }
+
+    private LinkedList<CharacterInfo> getSavedCharacters() {
+        LinkedList<CharacterInfo> list = new LinkedList<CharacterInfo>();
+        ArrayList<ArrayList<String>> saved_characters = xml_helper.getSavedCharacters(context);
+        if (saved_characters == null || saved_characters.isEmpty()) {
+            return list;
+        }
+        for (int i = 0; i < saved_characters.size(); i++) {
+            ArrayList<String> character_vals = saved_characters.get(i);
+            CharacterInfo character = new CharacterInfo();
+
+            character.set(Stats.NAME, character_vals.get(0));
+
+//            // String[] abilities = character_vals.get(1).split(":");
+//
+//            character.set(Stats.NAME, character_vals.get(2));
+//            character.set(Stats.NAME, character_vals.get(3));
+//
+//            // String[] level = character_vals.get(4).split(":");
+//            //character.set(Stats.NAME, character_vals.get(4));
+//            character.set(Stats.GENDER, character_vals.get(5));
+//
+//            character.set(Stats.AGE, character_vals.get(6));
+//            character.set(Stats.ALLI, character_vals.get(7));
+//            character.set(Stats.HEIGHT, character_vals.get(8));
+//            character.set(Stats.WEIGHT, character_vals.get(9));
+//            character.set(Stats.SIZE, character_vals.get(10));
+//
+//            //String[] hp = character_vals.get(11).split(":");
+//            //character.set(Stats.GENDER, character_vals.get(5));
+
+
+            list.add(character);
+        }
+
+        return list;
+    }
+
+    private void saveCharacters() {
+
     }
 }
