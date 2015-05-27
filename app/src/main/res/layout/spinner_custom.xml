@@ -7,4 +7,6 @@
     android:padding="6dp"
     android:paddingLeft="20dp"
     android:textSize="15sp"
-    android:id="@+id/spinner_custom" />
+    android:id="@+id/spinner_custom"
+    android:singleLine="true"
+    android:ellipsize="end"/>

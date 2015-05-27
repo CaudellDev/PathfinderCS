@@ -17,9 +17,14 @@ import android.app.Activity;
 
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.CharacterInfo;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.R;
+import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.Stats;
 
 /**
  * Created by Tyler on 4/15/2015.
+ *
+ * Dialog uses a custom layout to allow the user to quickly
+ * change key attributes to a new character, without having
+ * to search for them in CharacterInfoActivity.
  */
 public class CreateCharacterDialog
         extends DialogFragment
@@ -78,7 +83,7 @@ public class CreateCharacterDialog
     public void onClick(DialogInterface dialog, int which) {
         View myView = getView();
 
-        characterInfo.setName(nameField.getText().toString());
+        characterInfo.set(Stats.NAME, nameField.getText().toString().trim());
 
         communicator.onCreateCharacter(characterInfo);
     }
@@ -158,15 +163,15 @@ public class CreateCharacterDialog
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if (parent.getId() == R.id.dialog_spinner_race) {
-            characterInfo.setRace(((TextView) view).getText().toString());
+            characterInfo.set(Stats.RACE, ((TextView) view).getText().toString());
         } else if (parent == myView.findViewById(R.id.dialog_spinner_class)) {
-            characterInfo.setClass(((TextView) view).getText().toString());
+            characterInfo.set(Stats.CLASS, ((TextView) view).getText().toString());
         } else if (parent == myView.findViewById(R.id.dialog_spinner_roll_method)) {
             method = ((TextView) view).getText().toString().toLowerCase();
             method = (method.split(" ", 2))[0]; // Extracts the first word.
             System.out.println("onItemSelected method: " + method);
         } else if (parent == myView.findViewById(R.id.dialog_spinner_gender)) {
-            characterInfo.setGender(((TextView) view).getText().toString());
+            characterInfo.set(Stats.GENDER, ((TextView) view).getText().toString());
         }
     }
 

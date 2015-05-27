@@ -30,13 +30,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <view
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        class="cs.pathfinder.tabletop.game.tyler.pathfindercs.expandable_list_view_stuff.CharacterListView"
-                        android:id="@+id/tab_details_list"
-                        android:visibility="gone"/>
-
                     <ScrollView
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent">

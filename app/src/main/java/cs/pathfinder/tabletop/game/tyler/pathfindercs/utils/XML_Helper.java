@@ -45,6 +45,7 @@ public class XML_Helper {
     }
 
     public void saveCharacter(CharacterInfo character, int index, Context context) {
+        saveInternal(character, index, context);
         saveExternal(character, index, context);
     }
 

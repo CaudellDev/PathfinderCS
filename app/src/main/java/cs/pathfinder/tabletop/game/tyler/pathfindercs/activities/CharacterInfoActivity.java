@@ -7,18 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.CharacterHelper;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.dialogs.BasicEditDialog;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.CharacterInfo;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.R;
-import cs.pathfinder.tabletop.game.tyler.pathfindercs.expandable_list_view_stuff.CharacterArrayAdapter;
-import cs.pathfinder.tabletop.game.tyler.pathfindercs.expandable_list_view_stuff.CharacterListView;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.Stats;
 
 

@@ -47,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dialog_spinner_race"
                 android:layout_gravity="center"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dialog"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -77,6 +78,18 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto Import Race and Class stats"
+            android:textSize="16sp"
+            android:checked="true"
+            android:id="@+id/dialog_create_auto_import"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -94,7 +107,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#ffd5fffa"
+            android:background="#ffffe082"
             android:baselineAligned="false">
             <LinearLayout style="@style/DialogLayouts">
                 <TextView android:layout_width="fill_parent"

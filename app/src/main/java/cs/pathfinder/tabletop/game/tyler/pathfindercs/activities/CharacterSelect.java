@@ -22,6 +22,7 @@ import cs.pathfinder.tabletop.game.tyler.pathfindercs.R;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.components.CharacterCard;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.dialogs.ConfirmDeleteDialog;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.dialogs.CreateCharacterDialog;
+import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.Stats;
 import cs.pathfinder.tabletop.game.tyler.pathfindercs.utils.XML_Helper;
 
 /**
@@ -127,7 +128,7 @@ public class CharacterSelect
     @Override
     public void onConfirmDelete(int character) {
         CharacterInfo charInfo = CharacterHelper.getCharacter(character);
-        String name = charInfo.getName().trim();
+        String name = charInfo.get(Stats.NAME).trim();
         CharacterHelper.removeCharacter(character);
 
         if (CharacterHelper.isEmpty()) {
