@@ -210,6 +210,7 @@ public class CharacterInfoActivity
                 characterInfo.set(Stats.CMB, value);
                 break;
         }
+        CharacterHelper.updateCharacter(clickedStat, selectedCharacter);
         clickedStat = null;
     }
 

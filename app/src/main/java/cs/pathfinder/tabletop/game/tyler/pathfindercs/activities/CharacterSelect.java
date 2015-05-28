@@ -129,7 +129,7 @@ public class CharacterSelect
     public void onConfirmDelete(int character) {
         CharacterInfo charInfo = CharacterHelper.getCharacter(character);
         String name = charInfo.get(Stats.NAME).trim();
-        CharacterHelper.removeCharacter(character);
+        CharacterHelper.deleteCharacter(character);
 
         if (CharacterHelper.isEmpty()) {
             loadEmptyView();
@@ -139,7 +139,7 @@ public class CharacterSelect
         if (name.equals(""))
             name = "Character";
 
-        Toast.makeText(this, name + " has sucessfully been removed.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, name + " has successfully been deleted.", Toast.LENGTH_SHORT).show();
     }
 
     // Custom Methods...

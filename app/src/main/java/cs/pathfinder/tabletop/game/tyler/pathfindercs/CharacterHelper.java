@@ -42,7 +42,8 @@ public class CharacterHelper extends Application {
         return characters;
     }
 
-    public static void removeCharacter(int character) {
+    public static void deleteCharacter(int character) {
+        xml_helper.deleteCharacter(character, context);
         characters.remove(character);
     }
 
@@ -73,6 +74,10 @@ public class CharacterHelper extends Application {
         super.onCreate();
     }
 
+    public static void updateCharacter(Stats stat, int character) {
+        xml_helper.updateCharacter(characters.get(character), stat, character, context);
+    }
+
     private LinkedList<CharacterInfo> getSavedCharacters() {
         LinkedList<CharacterInfo> list = new LinkedList<CharacterInfo>();
         ArrayList<ArrayList<String>> saved_characters = xml_helper.getSavedCharacters(context);
@@ -85,23 +90,23 @@ public class CharacterHelper extends Application {
 
             character.set(Stats.NAME, character_vals.get(0));
 
-//            // String[] abilities = character_vals.get(1).split(":");
-//
-//            character.set(Stats.NAME, character_vals.get(2));
-//            character.set(Stats.NAME, character_vals.get(3));
-//
-//            // String[] level = character_vals.get(4).split(":");
-//            //character.set(Stats.NAME, character_vals.get(4));
-//            character.set(Stats.GENDER, character_vals.get(5));
-//
-//            character.set(Stats.AGE, character_vals.get(6));
-//            character.set(Stats.ALLI, character_vals.get(7));
-//            character.set(Stats.HEIGHT, character_vals.get(8));
-//            character.set(Stats.WEIGHT, character_vals.get(9));
-//            character.set(Stats.SIZE, character_vals.get(10));
-//
-//            //String[] hp = character_vals.get(11).split(":");
-//            //character.set(Stats.GENDER, character_vals.get(5));
+            // String[] abilities = character_vals.get(1).split(":");
+
+            character.set(Stats.RACE, character_vals.get(2));
+            character.set(Stats.CLASS, character_vals.get(3));
+
+            // String[] level = character_vals.get(4).split(":");
+            //character.set(Stats.NAME, character_vals.get(4));
+            character.set(Stats.GENDER, character_vals.get(5));
+
+            character.set(Stats.AGE, character_vals.get(6));
+            character.set(Stats.ALLI, character_vals.get(7));
+            character.set(Stats.HEIGHT, character_vals.get(8));
+            character.set(Stats.WEIGHT, character_vals.get(9));
+            character.set(Stats.SIZE, character_vals.get(10));
+
+            //String[] hp = character_vals.get(11).split(":");
+            //character.set(Stats.GENDER, character_vals.get(5));
 
 
             list.add(character);

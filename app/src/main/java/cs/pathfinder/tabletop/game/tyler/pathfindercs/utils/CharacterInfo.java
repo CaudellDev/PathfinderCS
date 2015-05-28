@@ -94,6 +94,8 @@ public class CharacterInfo {
     public boolean autoImportClass() { return autoImportClass; }
 
     public void set(Stats stat, String value) {
+        if (value == null || value.equals("")) { return; }
+
         switch (stat) {
             case EYES: case HAIR:
             case ARM_SPD: case BURR_SPD: case CLIMB_SPD:
@@ -315,7 +317,6 @@ public class CharacterInfo {
 
     // For debugging purposes now...
     public String toString() {
-        return name + " - Level " + currLevel + " " + cClass + " " + race
-                + " {" + super.toString() + "}";
+        return name + " - Level " + currLevel + " " + cClass + " " + race;
     }
 }
